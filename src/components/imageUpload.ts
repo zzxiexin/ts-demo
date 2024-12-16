@@ -37,7 +37,7 @@ class ImageUpload {
             this.onError?.()
             return;
         }
-        if ((this.maxSize as number * 1024 * 1024) as number < size) {
+        if ((this.maxSize as number * 1024 * 1024) < size) {
             this.onError?.()
             return;
         }
@@ -53,7 +53,7 @@ class ImageUpload {
             }).catch(err => {
                 console.log(err)
             })
-        } catch (err) {
+        } catch (err) { 
             console.log(err)
         }
 

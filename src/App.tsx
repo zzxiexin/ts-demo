@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 // import fetch from './utils'
-import ImageUpload from './imageUpload';
+import ImageUpload from './components/imageUpload';
 
 function App() {
   // useEffect(() => {
