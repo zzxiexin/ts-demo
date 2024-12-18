@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from 'react-dom/client';
 import "./index.css"
 
 class ImagePreview extends React.Component<any, any> {
@@ -10,11 +10,24 @@ class ImagePreview extends React.Component<any, any> {
         ImagePreview.dom.className = "wrapper";
         document.body.appendChild(ImagePreview.dom);
 
-        ReactDOM.render(
-            <ImagePreview />,
+        const root = ReactDOM.createRoot(
             ImagePreview.dom
         );
+        root.render(<ImagePreview />)
+
     };
+
+    static close = () => {
+        if (ImagePreview.dom) {
+            if (ImagePreview.dom.remove) {
+                ImagePreview.dom.remove();
+            } else {
+                document.body.removeChild(ImagePreview.dom);
+            }
+            ImagePreview.dom = null;
+        }
+    };
+
     render() {
         return (
             <div className="test">

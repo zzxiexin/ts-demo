@@ -26,7 +26,8 @@ function App() {
       <Provider value={{ name: "test" }}>
         <Test />
       </Provider>
-      <Button onClick={() => ImagePreview.show()}></Button>
+      <Button onClick={() => ImagePreview.show()}>开启</Button>
+      <Button onClick={() => ImagePreview.close()}>关闭</Button>
     </div>
   );
 }
